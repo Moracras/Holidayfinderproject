@@ -1,24 +1,171 @@
-/* Error: Only 2 arguments allowed, but 4 were passed.
- *    ,--> scss\components\_navbar.scss
- * 39 | /             @include btn(1.6rem, 0.3rem,
- * 40 | |             $btnBorderColor, $mainColor);
- *    | '----------------------------------------^ invocation
- *    '
- *    ,--> scss\abstracts\_mixin.scss
- * 16 |   @mixin btn($color,$bg){
- *    |          =============== declaration
- *    '
- *   scss\components\_navbar.scss 39:13  btn()
- *   scss\components\_navbar.scss 39:13  @use
- *   scss\main.scss 10:1                 root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Only 2 arguments allowed, but 4 were passed.\a    \250c \2500 \2500 > scss\\components\\_navbar.scss\a 39 \2502  \250c              @include btn(1.6rem, 0.3rem,\a 40 \2502  \2502              $btnBorderColor, $mainColor);\a    \2502  \2514 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 ^ invocation\a    \2575 \a    \250c \2500 \2500 > scss\\abstracts\\_mixin.scss\a 16 \2502    @mixin btn($color,$bg){\d\a    \2502           \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501  declaration\a    \2575 \a   scss\\components\\_navbar.scss 39:13  btn()\a   scss\\components\\_navbar.scss 39:13  @use\a   scss\\main.scss 10:1                 root stylesheet";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Mulish&family=Playfair+Display&family=Rampart+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  width: 50px;
+  height: 50px;
+}
+.header i {
+  display: none;
+}
+.header__links {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+.header__links--home, .header__links--disabled {
+  color: #202336;
+  border: none;
+  background-color: #ffffff;
+  font-family: "Inter";
+  font-weight: 100;
+  font-size: 1rem;
+  line-height: 19px;
+}
+.header__links--disabled {
+  color: #b8becd;
+  font-weight: 600;
+}
+.header__links--login {
+  border: 1px solid #fb8f1d;
+  color: #fb8f1d;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 0.3rem 1.6rem;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: auto;
+}
+.header__links--login:hover {
+  opacity: 0.6;
+}
+.header__links--register {
+  border: 1px solid #fb8f1d;
+  color: #ffffff;
+  background-color: #fb8f1d;
+  border-radius: 8px;
+  padding: 0.3rem 1.6rem;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: auto;
+}
+.header__links--register:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    display: block;
+    text-align: right;
+  }
+  .header__links, .header__logo {
+    display: none;
+  }
+  .header i {
+    display: inline-block;
+    margin-left: auto;
+    padding-right: 1rem;
+  }
+  .header .show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.3rem;
+}
+.home__image {
+  width: 50%;
+}
+.home__form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.home__form h2 {
+  font-family: "Playfair Display";
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 80px;
+  color: #202336;
+}
+.home__form h3 {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 27px;
+}
+.home__form hr {
+  width: 2rem;
+  border: 1px solid;
+}
+.home__form form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.home__form form select {
+  width: 48%;
+  border-radius: 6px;
+  padding: 0.5rem;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: auto;
+  color: #4a4c53;
+}
+.home__form--button {
+  border: 1px solid #fb8f1d;
+  color: #ffffff;
+  background-color: #fb8f1d;
+  border-radius: 8px;
+  padding: 0.3rem 1.6rem;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: auto;
+}
+.home__form--button:hover {
+  opacity: 0.6;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1536px;
+  margin: auto;
+  padding: 1rem;
+}
+
+button,
+i {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */
