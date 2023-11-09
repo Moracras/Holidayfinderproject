@@ -4,7 +4,7 @@
     @include flex(space-between);
     gap: 1.3rem;
     &__image {
-        width: 50%;
+        width: 40%;
     }
 
     &__form {
@@ -20,6 +20,7 @@
 
         h3{
             @include setFont("Inter", 600, 1.4rem,27px);
+            color:$headerColor;
         }
 
         hr{

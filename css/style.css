@@ -86,6 +86,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 1rem;
   }
 }
 .home {
@@ -95,7 +96,7 @@
   gap: 1.3rem;
 }
 .home__image {
-  width: 50%;
+  width: 40%;
 }
 .home__form {
   display: flex;
@@ -116,6 +117,7 @@
   font-weight: 600;
   font-size: 1.4rem;
   line-height: 27px;
+  color: #202336;
 }
 .home__form hr {
   width: 2rem;
