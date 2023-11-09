@@ -1,57 +1,24 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Inter&family=Mulish&family=Playfair+Display&family=Rampart+One&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Error: Only 2 arguments allowed, but 4 were passed.
+ *    ,--> scss\components\_navbar.scss
+ * 39 | /             @include btn(1.6rem, 0.3rem,
+ * 40 | |             $btnBorderColor, $mainColor);
+ *    | '----------------------------------------^ invocation
+ *    '
+ *    ,--> scss\abstracts\_mixin.scss
+ * 16 |   @mixin btn($color,$bg){
+ *    |          =============== declaration
+ *    '
+ *   scss\components\_navbar.scss 39:13  btn()
+ *   scss\components\_navbar.scss 39:13  @use
+ *   scss\main.scss 10:1                 root stylesheet */
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Only 2 arguments allowed, but 4 were passed.\a    \250c \2500 \2500 > scss\\components\\_navbar.scss\a 39 \2502  \250c              @include btn(1.6rem, 0.3rem,\a 40 \2502  \2502              $btnBorderColor, $mainColor);\a    \2502  \2514 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 ^ invocation\a    \2575 \a    \250c \2500 \2500 > scss\\abstracts\\_mixin.scss\a 16 \2502    @mixin btn($color,$bg){\d\a    \2502           \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501  declaration\a    \2575 \a   scss\\components\\_navbar.scss 39:13  btn()\a   scss\\components\\_navbar.scss 39:13  @use\a   scss\\main.scss 10:1                 root stylesheet";
 }
-.header__logo {
-  width: 50px;
-  height: 50px;
-}
-.header i {
-  display: none;
-}
-.header__links {
-  list-style-type: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 0;
-}
-.header__links--home, .header__links--disabled {
-  color: #202336;
-  border: none;
-  background-color: #ffffff;
-  font-family: Inter;
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 19px;
-}
-.header__links--disabled {
-  color: #B8BECD;
-}
-
-body {
-  background-color: #ffffff;
-}
-
-.container {
-  max-width: 1536px;
-  margin: auto;
-  padding: 1rem;
-}
-
-button,
-i {
-  cursor: pointer;
-}
-
-/*# sourceMappingURL=style.css.map */

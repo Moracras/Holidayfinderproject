@@ -12,3 +12,11 @@
     font-size: $fs;
     line-height: $lh;
 }
+
+@mixin btn($color,$bg){
+    border: 1px solid $btnBorderColor;
+    color: $color;
+    background-color: $bg;
+    border-radius: 8px;
+    @include setFont("Inter", 500, 1rem, auto )
+}
